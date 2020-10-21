@@ -51,6 +51,7 @@
 @property (nonatomic) UIImageView *imageView;
 
 @property (nonatomic) UILabel *fpsLable;
+@property (nonatomic, assign) NSInteger perSecondCount;
 
 @property (nonatomic, strong) dispatch_queue_t videoQueue;
 @property (nonatomic, strong) dispatch_queue_t audioQueue;
@@ -92,32 +93,6 @@
 - (void)startRtmp {
     _rtmpConnect = [[RTMPConnect alloc] init];
     _rtmpConnect.delegate = self;
-}
-
-static int captureVideoFPS;
-- (void)calculatorCaptureFPS
-{
-    static int count = 0;
-    static float lastTime = 0;
-    CMClockRef hostClockRef = CMClockGetHostTimeClock();
-    CMTime hostTime = CMClockGetTime(hostClockRef);
-    float nowTime = CMTimeGetSeconds(hostTime);
-    if(nowTime - lastTime >= 1)
-    {
-        captureVideoFPS = count;
-        lastTime = nowTime;
-        count = 0;
-    }
-    else
-    {
-        count ++;
-    }
-}
-
-// 获取视频帧率
-+ (int)getCaptureVideoFPS
-{
-    return captureVideoFPS;
 }
 
 - (void)initCaputure {
@@ -253,11 +228,14 @@ static int captureVideoFPS;
     _fpsLable.textColor = [UIColor redColor];
     [self.view addSubview:_fpsLable];
     __weak typeof(self)weakSelf = self;
-    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(calculatorCaptureFPS)];
-    [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        weakSelf.fpsLable.text = [NSString stringWithFormat:@"%d",[[self class] getCaptureVideoFPS]];
-    }];
+    if (@available(iOS 10.0, *)) {
+        [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            weakSelf.fpsLable.text = [NSString stringWithFormat:@"%ld",(long)weakSelf.perSecondCount];
+            weakSelf.perSecondCount = 0;
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)rotateButtonAction {
@@ -309,28 +287,6 @@ static int captureVideoFPS;
             [self.rtmpConnect startWithUrl:@"rtmp://192.168.0.159:8001/yp/room"];
         });
     }
-}
-
-- (void)takePhotoAction {
-    AVCaptureConnection *connection = self.session.outputs.firstObject.connections.firstObject;
-    self.ImageOutPut = self.session.outputs.firstObject;
-//    AVCaptureConnection *connection = [self.ImageOutPut connectionWithMediaType:AVMediaTypeVideo];
-    [self.ImageOutPut captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef  _Nullable imageDataSampleBuffer, NSError * _Nullable error) {
-        if (imageDataSampleBuffer == nil) {
-            return;
-        }
-        NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-        CFDictionaryRef newMetaDataRef = CMCopyDictionaryOfAttachments(NULL, imageDataSampleBuffer, kCMAttachmentMode_ShouldPropagate);
-        NSDictionary *metaDataDict = (__bridge NSDictionary *)newMetaDataRef;
-        UIImage *image = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.imageView setHidden:NO];
-            self.imageView.image = image;
-            if (self.takePhoto) {
-                self.takePhoto(image);
-            }
-        });
-    }];
 }
 
 - (void)cancelAction {
@@ -415,7 +371,6 @@ static int captureVideoFPS;
 }
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection  {
-//    NSLog(@"didOutputSampleBuffer");
     if (![self.rtmpConnect isConnected]) {
         return;
     }
@@ -426,32 +381,6 @@ static int captureVideoFPS;
         [_audioEncoder encodeAudio:sampleBuffer timestamp:self.currentTime];
     }
     return;
-
-
-    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CVPixelBufferLockBaseAddress(imageBuffer,0);
-    void *baseAddress = (void *)CVPixelBufferGetBaseAddress(imageBuffer);
-    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-    size_t width = CVPixelBufferGetWidth(imageBuffer);
-    size_t height = CVPixelBufferGetHeight(imageBuffer);
-
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
-
-    CGImageRef newImage = CGBitmapContextCreateImage(newContext);
-
-    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-    CGContextRelease(newContext);
-    CGColorSpaceRelease(colorSpace);
-    if (!newImage) {
-        return;
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.imageView.image = [UIImage imageWithCGImage:newImage];
-//        UIImage *image = [FCImageFliter dealCGImage:newImage fliterType:FCImageFliterTypeLemo];
-//        self.imageView.image = image;
-        CGImageRelease(newImage);
-    });
 }
 
 - (NSData *)convertVideoBufferToYUVData:(CMSampleBufferRef)samplebuffer {
@@ -470,6 +399,7 @@ static int captureVideoFPS;
 #pragma mark - VideoCoderDelegate
 
 - (void)encodeFrameData:(FrameData *)frame {
+    self.perSecondCount++;
     if ([self.rtmpConnect isConnected]) {
         [self.rtmpConnect sendFrame:frame];
     }
@@ -513,6 +443,7 @@ static int captureVideoFPS;
             [_photoButton setTitle:@"停止直播" forState:UIControlStateNormal];
             _photoButton.enabled = YES;
             _isFirstFrame = YES;
+            _perSecondCount = 0;
             break;
         case RTMPConnectStatedConnectErr:
         case RTMPConnectStatedUnConnected:
