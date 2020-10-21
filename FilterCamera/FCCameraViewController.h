@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FCCameraViewController.h
 //  FilterCamera
 //
 //  Created by Imp on 2018/8/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FCCameraViewController : UIViewController
 
 @end
-

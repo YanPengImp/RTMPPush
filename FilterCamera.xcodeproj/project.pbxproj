@@ -7,21 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5412B92253EE12A00138DA1 /* AudioEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B5412B91253EE12A00138DA1 /* AudioEncoder.m */; };
+		B565711F251CE3DC00CFDCA9 /* librtmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B565711E251CE3DC00CFDCA9 /* librtmp.a */; };
+		B5657127251CE58E00CFDCA9 /* RTMPConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = B5657126251CE58E00CFDCA9 /* RTMPConnect.m */; };
+		B565712A251CF09B00CFDCA9 /* FrameData.m in Sources */ = {isa = PBXBuildFile; fileRef = B5657129251CF09B00CFDCA9 /* FrameData.m */; };
+		B5657193251DD47400CFDCA9 /* VideoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B5657192251DD47400CFDCA9 /* VideoCoder.m */; };
+		B5657195251DD48800CFDCA9 /* VideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B5657194251DD48800CFDCA9 /* VideoDecoder.m */; };
+		B5CA68DE211D28D4007D6C0E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68DD211D28D4007D6C0E /* MainViewController.m */; };
+		B5CA68E1211D2944007D6C0E /* FCPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68E0211D2944007D6C0E /* FCPhotosViewController.m */; };
+		B5CA68E4211D2952007D6C0E /* FCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68E3211D2952007D6C0E /* FCCameraViewController.m */; };
+		B5CA68E8211D2C92007D6C0E /* FCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68E7211D2C92007D6C0E /* FCImagePicker.m */; };
+		B5CA68EB211D3C12007D6C0E /* FCImageFliter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68EA211D3C12007D6C0E /* FCImageFliter.m */; };
+		B5CA68EE211D6064007D6C0E /* FCFliterCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CA68ED211D6064007D6C0E /* FCFliterCameraViewController.m */; };
 		B5DA9903211D2347006DAC50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DA9902211D2347006DAC50 /* AppDelegate.m */; };
-		B5DA9906211D2347006DAC50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DA9905211D2347006DAC50 /* ViewController.m */; };
-		B5DA9909211D2347006DAC50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DA9907211D2347006DAC50 /* Main.storyboard */; };
 		B5DA990B211D2349006DAC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DA990A211D2349006DAC50 /* Assets.xcassets */; };
 		B5DA990E211D2349006DAC50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DA990C211D2349006DAC50 /* LaunchScreen.storyboard */; };
 		B5DA9911211D2349006DAC50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DA9910211D2349006DAC50 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5412B90253EE12A00138DA1 /* AudioEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioEncoder.h; sourceTree = "<group>"; };
+		B5412B91253EE12A00138DA1 /* AudioEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioEncoder.m; sourceTree = "<group>"; };
+		B5657119251CE3DC00CFDCA9 /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http.h; sourceTree = "<group>"; };
+		B565711A251CE3DC00CFDCA9 /* amf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amf.h; sourceTree = "<group>"; };
+		B565711B251CE3DC00CFDCA9 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		B565711C251CE3DC00CFDCA9 /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp.h; sourceTree = "<group>"; };
+		B565711E251CE3DC00CFDCA9 /* librtmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librtmp.a; sourceTree = "<group>"; };
+		B5657125251CE58E00CFDCA9 /* RTMPConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTMPConnect.h; sourceTree = "<group>"; };
+		B5657126251CE58E00CFDCA9 /* RTMPConnect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPConnect.m; sourceTree = "<group>"; };
+		B5657128251CF09B00CFDCA9 /* FrameData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameData.h; sourceTree = "<group>"; };
+		B5657129251CF09B00CFDCA9 /* FrameData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameData.m; sourceTree = "<group>"; };
+		B5657191251DD47300CFDCA9 /* VideoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCoder.h; sourceTree = "<group>"; };
+		B5657192251DD47400CFDCA9 /* VideoCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCoder.m; sourceTree = "<group>"; };
+		B5657194251DD48800CFDCA9 /* VideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDecoder.m; sourceTree = "<group>"; };
+		B580EE11251C9A60004336D3 /* VideoDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoDecoder.h; sourceTree = "<group>"; };
+		B5CA68DC211D28D4007D6C0E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B5CA68DD211D28D4007D6C0E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B5CA68DF211D2944007D6C0E /* FCPhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCPhotosViewController.h; sourceTree = "<group>"; };
+		B5CA68E0211D2944007D6C0E /* FCPhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCPhotosViewController.m; sourceTree = "<group>"; };
+		B5CA68E2211D2952007D6C0E /* FCCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCameraViewController.h; sourceTree = "<group>"; };
+		B5CA68E3211D2952007D6C0E /* FCCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCameraViewController.m; sourceTree = "<group>"; };
+		B5CA68E6211D2C92007D6C0E /* FCImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCImagePicker.h; sourceTree = "<group>"; };
+		B5CA68E7211D2C92007D6C0E /* FCImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImagePicker.m; sourceTree = "<group>"; };
+		B5CA68E9211D3C12007D6C0E /* FCImageFliter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCImageFliter.h; sourceTree = "<group>"; };
+		B5CA68EA211D3C12007D6C0E /* FCImageFliter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCImageFliter.m; sourceTree = "<group>"; };
+		B5CA68EC211D6064007D6C0E /* FCFliterCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCFliterCameraViewController.h; sourceTree = "<group>"; };
+		B5CA68ED211D6064007D6C0E /* FCFliterCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCFliterCameraViewController.m; sourceTree = "<group>"; };
 		B5DA98FE211D2347006DAC50 /* FilterCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilterCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DA9901211D2347006DAC50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5DA9902211D2347006DAC50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B5DA9904211D2347006DAC50 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B5DA9905211D2347006DAC50 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B5DA9908211D2347006DAC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5DA990A211D2349006DAC50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5DA990D211D2349006DAC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5DA990F211D2349006DAC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,12 +67,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B565711F251CE3DC00CFDCA9 /* librtmp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5212AA8251896BA004BF059 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B5657117251CE3DC00CFDCA9 /* librtmp */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B5657117251CE3DC00CFDCA9 /* librtmp */ = {
+			isa = PBXGroup;
+			children = (
+				B5657118251CE3DC00CFDCA9 /* include */,
+				B565711D251CE3DC00CFDCA9 /* lib */,
+			);
+			path = librtmp;
+			sourceTree = "<group>";
+		};
+		B5657118251CE3DC00CFDCA9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B5657119251CE3DC00CFDCA9 /* http.h */,
+				B565711A251CE3DC00CFDCA9 /* amf.h */,
+				B565711B251CE3DC00CFDCA9 /* log.h */,
+				B565711C251CE3DC00CFDCA9 /* rtmp.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B565711D251CE3DC00CFDCA9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B565711E251CE3DC00CFDCA9 /* librtmp.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B5657120251CE42200CFDCA9 /* DecodeEnCode */ = {
+			isa = PBXGroup;
+			children = (
+				B580EE11251C9A60004336D3 /* VideoDecoder.h */,
+				B5657194251DD48800CFDCA9 /* VideoDecoder.m */,
+				B5657191251DD47300CFDCA9 /* VideoCoder.h */,
+				B5657192251DD47400CFDCA9 /* VideoCoder.m */,
+				B5412B90253EE12A00138DA1 /* AudioEncoder.h */,
+				B5412B91253EE12A00138DA1 /* AudioEncoder.m */,
+			);
+			path = DecodeEnCode;
+			sourceTree = "<group>";
+		};
+		B5657121251CE43D00CFDCA9 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				B5657125251CE58E00CFDCA9 /* RTMPConnect.h */,
+				B5657126251CE58E00CFDCA9 /* RTMPConnect.m */,
+				B5657128251CF09B00CFDCA9 /* FrameData.h */,
+				B5657129251CF09B00CFDCA9 /* FrameData.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		B5CA68E5211D2C5A007D6C0E /* FC */ = {
+			isa = PBXGroup;
+			children = (
+				B5CA68E6211D2C92007D6C0E /* FCImagePicker.h */,
+				B5CA68E7211D2C92007D6C0E /* FCImagePicker.m */,
+				B5CA68E9211D3C12007D6C0E /* FCImageFliter.h */,
+				B5CA68EA211D3C12007D6C0E /* FCImageFliter.m */,
+			);
+			path = FC;
+			sourceTree = "<group>";
+		};
 		B5DA98F5211D2347006DAC50 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +164,20 @@
 		B5DA9900211D2347006DAC50 /* FilterCamera */ = {
 			isa = PBXGroup;
 			children = (
+				B5212AA8251896BA004BF059 /* Library */,
 				B5DA9901211D2347006DAC50 /* AppDelegate.h */,
 				B5DA9902211D2347006DAC50 /* AppDelegate.m */,
-				B5DA9904211D2347006DAC50 /* ViewController.h */,
-				B5DA9905211D2347006DAC50 /* ViewController.m */,
-				B5DA9907211D2347006DAC50 /* Main.storyboard */,
+				B5CA68DC211D28D4007D6C0E /* MainViewController.h */,
+				B5CA68DD211D28D4007D6C0E /* MainViewController.m */,
+				B5CA68DF211D2944007D6C0E /* FCPhotosViewController.h */,
+				B5CA68E0211D2944007D6C0E /* FCPhotosViewController.m */,
+				B5CA68E2211D2952007D6C0E /* FCCameraViewController.h */,
+				B5CA68E3211D2952007D6C0E /* FCCameraViewController.m */,
+				B5CA68EC211D6064007D6C0E /* FCFliterCameraViewController.h */,
+				B5CA68ED211D6064007D6C0E /* FCFliterCameraViewController.m */,
+				B5657121251CE43D00CFDCA9 /* Push */,
+				B5657120251CE42200CFDCA9 /* DecodeEnCode */,
+				B5CA68E5211D2C5A007D6C0E /* FC */,
 				B5DA990A211D2349006DAC50 /* Assets.xcassets */,
 				B5DA990C211D2349006DAC50 /* LaunchScreen.storyboard */,
 				B5DA990F211D2349006DAC50 /* Info.plist */,
@@ -130,7 +245,6 @@
 			files = (
 				B5DA990E211D2349006DAC50 /* LaunchScreen.storyboard in Resources */,
 				B5DA990B211D2349006DAC50 /* Assets.xcassets in Resources */,
-				B5DA9909211D2347006DAC50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,23 +255,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5DA9906211D2347006DAC50 /* ViewController.m in Sources */,
+				B5CA68EE211D6064007D6C0E /* FCFliterCameraViewController.m in Sources */,
+				B5657127251CE58E00CFDCA9 /* RTMPConnect.m in Sources */,
+				B5657195251DD48800CFDCA9 /* VideoDecoder.m in Sources */,
+				B5CA68E8211D2C92007D6C0E /* FCImagePicker.m in Sources */,
+				B565712A251CF09B00CFDCA9 /* FrameData.m in Sources */,
+				B5CA68EB211D3C12007D6C0E /* FCImageFliter.m in Sources */,
+				B5CA68E4211D2952007D6C0E /* FCCameraViewController.m in Sources */,
+				B5412B92253EE12A00138DA1 /* AudioEncoder.m in Sources */,
+				B5CA68E1211D2944007D6C0E /* FCPhotosViewController.m in Sources */,
 				B5DA9911211D2349006DAC50 /* main.m in Sources */,
 				B5DA9903211D2347006DAC50 /* AppDelegate.m in Sources */,
+				B5CA68DE211D28D4007D6C0E /* MainViewController.m in Sources */,
+				B5657193251DD47400CFDCA9 /* VideoCoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5DA9907211D2347006DAC50 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5DA9908211D2347006DAC50 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B5DA990C211D2349006DAC50 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,10 +401,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WARB38VJA;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FilterCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FilterCamera/Library/librtmp/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jingbo.FilterCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,10 +424,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WARB38VJA;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FilterCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FilterCamera/Library/librtmp/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jingbo.FilterCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
